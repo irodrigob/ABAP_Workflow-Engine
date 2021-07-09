@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_WFE_UTILITIES</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>WFE - Utilities</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_UTILITIES</CLSNAME>
+     <CMPNAME>CONV_PARAMS_2_RANGES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Converts params_sl to ranges</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_UTILITIES</CLSNAME>
+     <CMPNAME>FILL_RETURN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Fill return</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_UTILITIES</CLSNAME>
+     <CMPNAME>GET_STRUCT_COMPONENTS_RECUS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get componentes of structure</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_UTILITIES</CLSNAME>
+     <CMPNAME>STRUCTURE_COMP_CASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Structure components</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

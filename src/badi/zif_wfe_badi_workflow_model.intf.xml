@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_WFE_BADI_WORKFLOW_MODEL</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Interface for BAdI: ZWFE_BADI_ENGINE</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_BADI_WORKFLOW_MODEL</CLSNAME>
+     <CMPNAME>CHANGE_STEP_APPROVERS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change step approvers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_BADI_WORKFLOW_MODEL</CLSNAME>
+     <CMPNAME>DETERMINE_NEXT_STEP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Determine next step</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_BADI_WORKFLOW_MODEL</CLSNAME>
+     <CMPNAME>POST_SAVE_WORKFLOW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Post save workflow</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

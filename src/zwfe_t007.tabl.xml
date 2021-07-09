@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD02V>
+    <TABNAME>ZWFE_T007</TABNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <TABCLASS>TRANSP</TABCLASS>
+    <CLIDEP>X</CLIDEP>
+    <LANGDEP>X</LANGDEP>
+    <DDTEXT>WFE - Header data</DDTEXT>
+    <MAINFLAG>X</MAINFLAG>
+    <CONTFLAG>A</CONTFLAG>
+    <EXCLASS>4</EXCLASS>
+   </DD02V>
+   <DD09L>
+    <TABNAME>ZWFE_T007</TABNAME>
+    <AS4LOCAL>A</AS4LOCAL>
+    <TABKAT>4</TABKAT>
+    <TABART>APPL0</TABART>
+    <BUFALLOW>N</BUFALLOW>
+   </DD09L>
+   <DD03P_TABLE>
+    <DD03P>
+     <FIELDNAME>MANDT</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ROLLNAME>MANDT</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <NOTNULL>X</NOTNULL>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>.INCLUDE</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ADMINFIELD>0</ADMINFIELD>
+     <PRECFIELD>ZWFE_S_HEADER_KEY_FIELDS</PRECFIELD>
+     <NOTNULL>X</NOTNULL>
+     <MASK>      S</MASK>
+     <DDTEXT>WFE - Header key fields</DDTEXT>
+     <COMPTYPE>S</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>.INCLUDE</FIELDNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <PRECFIELD>ZWFE_S_HEADER_FIELDS</PRECFIELD>
+     <MASK>      S</MASK>
+     <DDTEXT>WFE - Header fields</DDTEXT>
+     <COMPTYPE>S</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>.INCLUDE</FIELDNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <PRECFIELD>ZWFE_S_CHANGELOG_FIELDS</PRECFIELD>
+     <MASK>      S</MASK>
+     <DDTEXT>WFE - Change log fields</DDTEXT>
+     <COMPTYPE>S</COMPTYPE>
+    </DD03P>
+   </DD03P_TABLE>
+   <DD08V_TABLE>
+    <DD08V>
+     <FIELDNAME>STATUS</FIELDNAME>
+     <CHECKTABLE>*</CHECKTABLE>
+     <FRKART>KEY</FRKART>
+     <CARD>CN</CARD>
+     <CARDLEFT>1</CARDLEFT>
+    </DD08V>
+    <DD08V>
+     <FIELDNAME>WORKFLOW</FIELDNAME>
+     <CHECKTABLE>*</CHECKTABLE>
+     <FRKART>KEY</FRKART>
+     <CARD>CN</CARD>
+     <CARDLEFT>1</CARDLEFT>
+    </DD08V>
+   </DD08V_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

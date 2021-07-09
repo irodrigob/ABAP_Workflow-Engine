@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>WFE - Workflow engine</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>CONTINUE_WORKFLOW_STEP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Continue next step(approve o reject step)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>CREATE_DRAFT_WORKFLOW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create a draft worklow(W/O steps and approvers)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>CREATE_WORKFLOW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create a workflow</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>INSTANCE_BADI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance BADI</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>NEW_WORKFLOW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>New workflow</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_WFE_WORKFLOW_ENGINE</CLSNAME>
+     <CMPNAME>UPDATE_VALUES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Update values</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

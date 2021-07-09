@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>WFE - Workflow interface</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>CONTINUE_NEXT_STEP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Continue next step(approve o reject step)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>DETERMINE_STATUS_APPROVERS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Determine status approvers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>GET_ACTIVE_STATUS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get active status</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>GET_APPROVERS_STEP_ACTIVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get approver of step active</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>GET_DATA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get data of worklfow(header, values, etc.)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>GET_INITIAL_STATUS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get initial status</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>IS_COMPLETED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Is workflow completed?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>IS_DRAFT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Is status o status worfkow draft?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>IS_REJECTED</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Is workflow rejected?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>NEW</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>New workflow</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>NEW_DRAFT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>New draft</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
+     <CMPNAME>UPDATE_VALUES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Update values</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
