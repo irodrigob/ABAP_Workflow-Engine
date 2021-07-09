@@ -25,7 +25,7 @@ interface ZIF_WFE_BADI_WORKFLOW_MODEL
     importing
       !IO_WF_MODEL type ref to ZIF_WFE_WORKFLOW optional .
   "! <p class="shorttext synchronized">Determine next step</p>
-  methods DETERMINE_NEXT_STEP
+  methods determine_next_status
     importing
       !IV_ACTUAL_STATUS type ZWFE_E_STATUS
       !IT_VALUES type ZWFE_I_VALUES_WF

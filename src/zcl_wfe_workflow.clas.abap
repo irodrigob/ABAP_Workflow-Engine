@@ -207,7 +207,7 @@ CLASS zcl_wfe_workflow DEFINITION
     "! <p class="shorttext synchronized">Call BADI post save the workflow</p>
     METHODS call_badi_post_save_workflow .
     "! <p class="shorttext synchronized">Call BADI post save the workflow</p>
-    METHODS call_badi_determine_next_step
+    METHODS call_badi_det_next_status
       IMPORTING
         !iv_actual_status      TYPE zwfe_e_status
         !iv_step_result        TYPE zwfe_e_step_result
@@ -284,7 +284,7 @@ CLASS zcl_wfe_workflow IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD call_badi_determine_next_step.
+  METHOD call_badi_det_next_status.
 
     IF mo_handle_badi IS BOUND.
 
@@ -309,7 +309,7 @@ CLASS zcl_wfe_workflow IMPLEMENTATION.
       " Los valores los adapto al formato de BADI.
       DATA(lt_values) = CORRESPONDING zwfe_i_values_wf( mt_values ).
 
-      CALL BADI mo_handle_badi->determine_next_step
+      CALL BADI mo_handle_badi->determine_next_status
         EXPORTING
           iv_actual_status           = iv_actual_status
           it_values                  = lt_values
@@ -463,7 +463,7 @@ CLASS zcl_wfe_workflow IMPLEMENTATION.
     ev_workflow_completed = COND #( WHEN ev_next_status = mv_status_completed THEN abap_true ELSE abap_false ).
 
     " Se llama a la BADI para poder cambiar el paso siguiente
-    call_badi_determine_next_step(
+    call_badi_det_next_status(
       EXPORTING
         iv_actual_status           = ms_header-status
         iv_step_result             = iv_step_result
