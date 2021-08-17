@@ -38,37 +38,36 @@ public section.
       !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
     exporting
       !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
-  PROTECTED SECTION.
-    DATA mo_handle_badi TYPE REF TO zwfe_badi_engine.
-    DATA mv_langu TYPE sy-langu .
-    DATA mo_workflow TYPE REF TO zif_wfe_workflow .
+protected section.
+
+  data MO_HANDLE_BADI type ref to ZWFE_BADI_ENGINE .
+  data MV_LANGU type SY-LANGU .
+  data MO_WORKFLOW type ref to ZIF_WFE_WORKFLOW .
 
     "! <p class="shorttext synchronized">New workflow</p>
-    METHODS create_workflow
-      IMPORTING
-        !iv_workflow     TYPE zwfe_e_workflow
-        !it_values       TYPE zwfe_i_values_wf
-        !iv_commit       TYPE sap_bool DEFAULT abap_true
-        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
-      EXPORTING
-        !ev_wf_id        TYPE zwfe_e_wf_id
-        !et_return       TYPE zif_wfe_data=>tt_return .
+  methods CREATE_WORKFLOW
+    importing
+      !IV_WORKFLOW type ZWFE_E_WORKFLOW
+      !IT_VALUES type ZWFE_I_VALUES_WF
+      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
+      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
+    exporting
+      !EV_WF_ID type ZWFE_E_WF_ID
+      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
     "! <p class="shorttext synchronized">Create a draft workflow</p>
-    METHODS create_draft_workflow
-      IMPORTING
-        !iv_workflow     TYPE zwfe_e_workflow
-        !it_values       TYPE zwfe_i_values_wf
-        !iv_commit       TYPE sap_bool DEFAULT abap_true
-        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
-      EXPORTING
-        !ev_wf_id        TYPE zwfe_e_wf_id
-        !et_return       TYPE zif_wfe_data=>tt_return .
+  methods CREATE_DRAFT_WORKFLOW
+    importing
+      !IV_WORKFLOW type ZWFE_E_WORKFLOW
+      !IT_VALUES type ZWFE_I_VALUES_WF
+      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
+      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
+    exporting
+      !EV_WF_ID type ZWFE_E_WF_ID
+      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
     "! <p class="shorttext synchronized">Instance BADI</p>
-    METHODS instance_badi
-      IMPORTING
-        !iv_workflow TYPE zwfe_e_workflow .
-
-
+  methods INSTANCE_BADI
+    importing
+      !IV_WORKFLOW type ZWFE_E_WORKFLOW .
   PRIVATE SECTION.
 
 ENDCLASS.

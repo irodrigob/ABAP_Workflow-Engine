@@ -49,7 +49,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_wfe_utilities IMPLEMENTATION.
+CLASS ZCL_WFE_UTILITIES IMPLEMENTATION.
 
 
   METHOD conv_params_2_ranges.

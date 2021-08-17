@@ -28,7 +28,7 @@
      <CLSNAME>ZCL_WFE_MODEL_DATA_CRUD</CLSNAME>
      <CMPNAME>DISPATCH_DATA</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Gestiona la actualización de los datos</DESCRIPT>
+     <DESCRIPT>Manage data update</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_MODEL_DATA_CRUD</CLSNAME>

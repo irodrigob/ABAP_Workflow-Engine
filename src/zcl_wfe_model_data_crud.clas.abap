@@ -1,79 +1,78 @@
-CLASS zcl_wfe_model_data_crud DEFINITION
-  PUBLIC
-  CREATE PUBLIC .
+class ZCL_WFE_MODEL_DATA_CRUD definition
+  public
+  create public .
 
-  PUBLIC SECTION.
+public section.
 
-    TYPES:
-      BEGIN OF ts_crud_options,
+  types:
+    BEGIN OF ts_crud_options,
         commit       TYPE sap_bool,
         langu        TYPE sy-langu,
         process_user TYPE zwfe_e_process_user,
       END OF ts_crud_options .
-    TYPES:
-      BEGIN OF ts_header.
+  types:
+    BEGIN OF ts_header.
         INCLUDE TYPE zwfe_s_header_key_fields.
         INCLUDE TYPE zwfe_s_header_fields.
       TYPES:
       END OF ts_header .
-    TYPES:
-      BEGIN OF ts_yheader.
+  types:
+    BEGIN OF ts_yheader.
         INCLUDE TYPE ts_header.
         INCLUDE TYPE zwfe_s_changelog_fields.
       TYPES:
       END OF ts_yheader .
-    TYPES:
-      BEGIN OF ts_values.
+  types:
+    BEGIN OF ts_values.
         INCLUDE TYPE zwfe_s_header_key_fields.
         INCLUDE TYPE zwfe_s_values_key_fields.
         INCLUDE TYPE zwfe_s_values_fields.
       TYPES:
       END OF ts_values .
-    TYPES:
-      tt_values TYPE STANDARD TABLE OF ts_values WITH EMPTY KEY .
-    TYPES:
-      BEGIN OF ts_steps.
+  types:
+    tt_values TYPE STANDARD TABLE OF ts_values WITH EMPTY KEY .
+  types:
+    BEGIN OF ts_steps.
         INCLUDE TYPE zwfe_s_steps_key_fields.
         INCLUDE TYPE zwfe_s_steps_fields.
       TYPES: END OF ts_steps .
-    TYPES:
-      tt_steps TYPE STANDARD TABLE OF ts_steps WITH EMPTY KEY .
-    TYPES:
-      BEGIN OF ts_ysteps.
+  types:
+    tt_steps TYPE STANDARD TABLE OF ts_steps WITH EMPTY KEY .
+  types:
+    BEGIN OF ts_ysteps.
         INCLUDE TYPE ts_steps.
         INCLUDE TYPE zwfe_s_changelog_fields.
       TYPES:
       END OF ts_ysteps .
-    TYPES:
-      tt_ysteps TYPE STANDARD TABLE OF ts_ysteps WITH EMPTY KEY .
-    TYPES:
-      BEGIN OF ts_steps_approvers.
+  types:
+    tt_ysteps TYPE STANDARD TABLE OF ts_ysteps WITH EMPTY KEY .
+  types:
+    BEGIN OF ts_steps_approvers.
         INCLUDE TYPE zwfe_s_steps_approv_key_fields.
         INCLUDE TYPE zwfe_s_steps_approv_fields.
       TYPES: END OF ts_steps_approvers .
-    TYPES:
-      tt_steps_approvers TYPE STANDARD TABLE OF ts_steps_approvers WITH EMPTY KEY .
-
-    TYPES ts_changelog_header TYPE zwfe_t009 .
-    TYPES ts_changelog_data TYPE zwfe_t010 .
-    TYPES:
-      tt_changelog_data TYPE STANDARD TABLE OF ts_changelog_data .
+  types:
+    tt_steps_approvers TYPE STANDARD TABLE OF ts_steps_approvers WITH EMPTY KEY .
+  types TS_CHANGELOG_HEADER type ZWFE_T009 .
+  types TS_CHANGELOG_DATA type ZWFE_T010 .
+  types:
+    tt_changelog_data TYPE STANDARD TABLE OF ts_changelog_data .
 
     "! <p class="shorttext synchronized">Gestiona las peticiones actualización</p>
-    METHODS dispatch_data
-      IMPORTING
-        !is_options                TYPE ts_crud_options OPTIONAL
-        !iv_updkz                  TYPE zwfe_e_change_ind
-        !is_header                 TYPE ts_header OPTIONAL
-        !it_values                 TYPE tt_values OPTIONAL
-        !it_steps                  TYPE tt_steps OPTIONAL
-        !it_steps_approvers        TYPE tt_steps_approvers OPTIONAL
-      EXPORTING
-        !et_return                 TYPE zif_wfe_data=>tt_return
-        !es_header_result          TYPE ts_header
-        !et_values_result          TYPE tt_values
-        !et_steps_result           TYPE tt_steps
-        !et_steps_approvers_result TYPE tt_steps_approvers .
+  methods DISPATCH_DATA
+    importing
+      !IS_OPTIONS type TS_CRUD_OPTIONS optional
+      !IV_UPDKZ type ZWFE_E_CHANGE_IND
+      !IS_HEADER type TS_HEADER optional
+      !IT_VALUES type TT_VALUES optional
+      !IT_STEPS type TT_STEPS optional
+      !IT_STEPS_APPROVERS type TT_STEPS_APPROVERS optional
+    exporting
+      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN
+      !ES_HEADER_RESULT type TS_HEADER
+      !ET_VALUES_RESULT type TT_VALUES
+      !ET_STEPS_RESULT type TT_STEPS
+      !ET_STEPS_APPROVERS_RESULT type TT_STEPS_APPROVERS .
 protected section.
 
   data MS_XHEADER type TS_HEADER .
