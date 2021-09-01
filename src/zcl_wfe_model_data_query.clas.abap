@@ -1,85 +1,89 @@
-CLASS zcl_wfe_model_data_query DEFINITION
-  PUBLIC
-  CREATE PUBLIC .
+class ZCL_WFE_MODEL_DATA_QUERY definition
+  public
+  create public .
 
-  PUBLIC SECTION.
+public section.
 
-    TYPES:
-      tt_r_wf_id TYPE RANGE OF zwfe_e_wf_id .
-    TYPES:
-      tt_r_wf_status TYPE RANGE OF zwfe_e_wf_status .
-    TYPES:
-      tt_r_status TYPE RANGE OF zwfe_e_status .
-    TYPES:
-      tt_r_approver TYPE RANGE OF zwfe_e_approver .
-    TYPES:
-      tt_r_workflow TYPE RANGE OF zwfe_e_workflow .
-    TYPES:
-      tt_r_field TYPE RANGE OF fieldname .
-    TYPES:
-      tt_r_value TYPE RANGE OF zwfe_e_value .
-    TYPES:
-      tt_r_step_status TYPE RANGE OF zwfe_e_step_status .
-    TYPES:
-      tt_r_is_backup TYPE RANGE OF zwfe_e_is_backup .
-    TYPES: tt_r_user_process TYPE RANGE OF zwfe_e_process_user_create.
-    TYPES: tt_r_user_sap TYPE RANGE OF syuname.
-    TYPES: tt_r_date TYPE RANGE OF sydatum.
-    TYPES: tt_r_time TYPE RANGE OF syuzeit.
+  types:
+    tt_r_wf_id TYPE RANGE OF zwfe_e_wf_id .
+  types:
+    tt_r_wf_status TYPE RANGE OF zwfe_e_wf_status .
+  types:
+    tt_r_status TYPE RANGE OF zwfe_e_status .
+  types:
+    tt_r_approver TYPE RANGE OF zwfe_e_approver .
+  types:
+    tt_r_workflow TYPE RANGE OF zwfe_e_workflow .
+  types:
+    tt_r_field TYPE RANGE OF fieldname .
+  types:
+    tt_r_value TYPE RANGE OF zwfe_e_value .
+  types:
+    tt_r_step_status TYPE RANGE OF zwfe_e_step_status .
+  types:
+    tt_r_is_backup TYPE RANGE OF zwfe_e_is_backup .
+  types:
+    tt_r_user_process TYPE RANGE OF zwfe_e_process_user_create .
+  types:
+    tt_r_user_sap TYPE RANGE OF syuname .
+  types:
+    tt_r_date TYPE RANGE OF sydatum .
+  types:
+    tt_r_time TYPE RANGE OF syuzeit .
 
     "! <p class="shorttext synchronized">CONSTRUCTOR</p>
-    METHODS constructor
-      IMPORTING
-        !iv_langu TYPE sy-langu DEFAULT sy-langu .
+  methods CONSTRUCTOR
+    importing
+      !IV_LANGU type SY-LANGU default SY-LANGU .
     "! <p class="shorttext synchronized">Get all data of workflow ID</p>
-    METHODS get_all_wf_id_data
-      IMPORTING
-        !it_r_wf_id         TYPE tt_r_wf_id
-      EXPORTING
-        !et_header          TYPE zwfe_i_header_all_fields
-        !et_steps           TYPE zwfe_i_steps_all_fields
-        !et_steps_approvers TYPE zwfe_i_steps_approv_all_fields
-        !et_values          TYPE zwfe_i_values_all_fields .
+  methods GET_ALL_WF_ID_DATA
+    importing
+      !IT_R_WF_ID type TT_R_WF_ID
+    exporting
+      !ET_HEADER type ZWFE_I_HEADER_ALL_FIELDS
+      !ET_STEPS type ZWFE_I_STEPS_ALL_FIELDS
+      !ET_STEPS_APPROVERS type ZWFE_I_STEPS_APPROV_ALL_FIELDS
+      !ET_VALUES type ZWFE_I_VALUES_ALL_FIELDS .
     "! <p class="shorttext synchronized">Get all data </p>
-    METHODS get_all_data
-      IMPORTING
-        !it_params_sl       TYPE zif_wfe_data=>tt_params_sl
-      EXPORTING
-        !et_all_data        TYPE zwfe_i_wf_all_data
-        !et_header          TYPE zwfe_i_header_all_fields
-        !et_steps           TYPE zwfe_i_steps_all_fields
-        !et_steps_approvers TYPE zwfe_i_steps_approv_all_fields
-        !et_values          TYPE zwfe_i_values_all_fields .
+  methods GET_ALL_DATA
+    importing
+      !IT_PARAMS_SL type ZIF_WFE_DATA=>TT_PARAMS_SL
+    exporting
+      !ET_HEADER type ZWFE_I_HEADER_ALL_FIELDS
+      !ET_STEPS type ZWFE_I_STEPS_ALL_FIELDS
+      !ET_STEPS_APPROVERS type ZWFE_I_STEPS_APPROV_ALL_FIELDS
+      !ET_VALUES type ZWFE_I_VALUES_ALL_FIELDS
+      !ET_ALL_DATA type ZWFE_I_WF_ALL_DATA .
     "! <p class="shorttext synchronized">Get header data</p>
-    METHODS get_header_data
-      IMPORTING
-        !it_params_sl TYPE zif_wfe_data=>tt_params_sl
-      EXPORTING
-        !et_header    TYPE zwfe_i_header_all_fields .
+  methods GET_HEADER_DATA
+    importing
+      !IT_PARAMS_SL type ZIF_WFE_DATA=>TT_PARAMS_SL
+    exporting
+      !ET_HEADER type ZWFE_I_HEADER_ALL_FIELDS .
     "! <p class="shorttext synchronized">Get values data</p>
-    METHODS get_values_data
-      IMPORTING
-        !it_params_sl TYPE zif_wfe_data=>tt_params_sl
-      EXPORTING
-        !et_values    TYPE zwfe_i_values_all_fields .
+  methods GET_VALUES_DATA
+    importing
+      !IT_PARAMS_SL type ZIF_WFE_DATA=>TT_PARAMS_SL
+    exporting
+      !ET_VALUES type ZWFE_I_VALUES_ALL_FIELDS .
     "! <p class="shorttext synchronized">Get steps data</p>
-    METHODS get_steps_data
-      IMPORTING
-        !it_params_sl TYPE zif_wfe_data=>tt_params_sl
-      EXPORTING
-        !et_steps     TYPE zwfe_i_steps_all_fields .
+  methods GET_STEPS_DATA
+    importing
+      !IT_PARAMS_SL type ZIF_WFE_DATA=>TT_PARAMS_SL
+    exporting
+      !ET_STEPS type ZWFE_I_STEPS_ALL_FIELDS .
     "! <p class="shorttext synchronized">Get steps approvers data</p>
-    METHODS get_steps_approvers_data
-      IMPORTING
-        !it_params_sl       TYPE zif_wfe_data=>tt_params_sl
-      EXPORTING
-        !et_steps_approvers TYPE zwfe_i_steps_approv_all_fields .
+  methods GET_STEPS_APPROVERS_DATA
+    importing
+      !IT_PARAMS_SL type ZIF_WFE_DATA=>TT_PARAMS_SL
+    exporting
+      !ET_STEPS_APPROVERS type ZWFE_I_STEPS_APPROV_ALL_FIELDS .
     "! <p class="shorttext synchronized">Get the changelog data</p>
-    METHODS get_changelog_data
-      IMPORTING
-        !it_r_wf_id        TYPE tt_r_wf_id
-      EXPORTING
-        !et_changelog_data TYPE zwfe_i_wf_changelog_data .
+  methods GET_CHANGELOG_DATA
+    importing
+      !IT_R_WF_ID type TT_R_WF_ID
+    exporting
+      !ET_CHANGELOG_DATA type ZWFE_I_WF_CHANGELOG_DATA .
   PROTECTED SECTION.
 
     DATA mv_langu TYPE sy-langu .
@@ -99,7 +103,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_wfe_model_data_query IMPLEMENTATION.
+CLASS ZCL_WFE_MODEL_DATA_QUERY IMPLEMENTATION.
 
 
   METHOD constructor.
@@ -253,24 +257,35 @@ CLASS zcl_wfe_model_data_query IMPLEMENTATION.
       CLEAR: lt_r_wf_id.
       lt_r_wf_id = VALUE #( FOR <wa> IN lt_wf_id ( sign = 'I' option = 'EQ' low = <wa>-header_wf_id ) ).
 
-      " Para prevenir futuras consultas muy gordas y evitar el dumps por ranges demasiado grande. Captura, la posible excepción
-      " y controlar para que se busque por for all entries. Que aunque, no es la más optima no petará por tamaño
-      TRY.
-          SELECT * FROM zwfecwfdata( p_langu = @mv_langu )
-           WHERE header_wf_id IN @lt_r_wf_id
-           INTO TABLE @et_all_data.
-        CATCH cx_root.
-          SELECT * FROM zwfecwfdata( p_langu = @mv_langu )
-          FOR ALL ENTRIES IN @lt_r_wf_id
-                 WHERE header_wf_id = @lt_r_wf_id-low
-                 INTO TABLE @et_all_data.
-      ENDTRY.
-      " Hago uno split de los datos para dividirlos en las distintas tablas del worklow
-      split_all_data_in_tables( EXPORTING it_data = et_all_data
-                                IMPORTING  et_header          = et_header
-                                          et_values          = et_values
-                                          et_steps           = et_steps
-                                          et_steps_approvers = et_steps_approvers ).
+      " Reemplazo la búsqueda directa al CDS por la del método que aunque puede que no sea tan, tan optima (aunque ese CDS) pero me garantiza que se
+      " devuelvan todos los campos (incluidos los campos string)
+      get_all_wf_id_data(
+        EXPORTING
+          it_r_wf_id         = VALUE #( FOR <wa> IN lt_wf_id ( sign = 'I' option = 'EQ' low = <wa>-header_wf_id ) )
+        IMPORTING
+          et_header          = et_header
+          et_steps           = et_steps
+          et_steps_approvers = et_steps_approvers
+          et_values          = et_values ).
+
+*      " Para prevenir futuras consultas muy gordas y evitar el dumps por ranges demasiado grande. Captura, la posible excepción
+*      " y controlar para que se busque por for all entries. Que aunque, no es la más optima no petará por tamaño
+*      TRY.
+*          SELECT * FROM zwfecwfdata( p_langu = @mv_langu )
+*           WHERE header_wf_id IN @lt_r_wf_id
+*           INTO TABLE @et_all_data.
+*        CATCH cx_root.
+*          SELECT * FROM zwfecwfdata( p_langu = @mv_langu )
+*          FOR ALL ENTRIES IN @lt_r_wf_id
+*                 WHERE header_wf_id = @lt_r_wf_id-low
+*                 INTO TABLE @et_all_data.
+*      ENDTRY.
+*      " Hago uno split de los datos para dividirlos en las distintas tablas del worklow
+*      split_all_data_in_tables( EXPORTING it_data = et_all_data
+*                                IMPORTING  et_header          = et_header
+*                                          et_values          = et_values
+*                                          et_steps           = et_steps
+*                                          et_steps_approvers = et_steps_approvers ).
     ENDIF.
   ENDMETHOD.
 

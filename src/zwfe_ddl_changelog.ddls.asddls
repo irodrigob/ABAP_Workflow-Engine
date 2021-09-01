@@ -37,5 +37,7 @@ and values.chngind = chng_ind_field.domvalue_l
         values.chngind,
         chng_ind_field.ddtext as chngind_desc,
         values.value_new,
-        values.value_old
+        values.value_old,
+        values.value_extended_new,
+        values.value_extended_old
 }

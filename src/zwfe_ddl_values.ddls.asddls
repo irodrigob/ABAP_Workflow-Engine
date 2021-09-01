@@ -8,5 +8,6 @@ define view ZWFE_DDL_VALUES as select from zwfe_t008 {
     key wf_id,
     key counter,
     key field,
-    value
+    value,
+    value_extended
 }

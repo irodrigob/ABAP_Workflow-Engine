@@ -39,6 +39,8 @@ left outer join ZWFE_DDL_STEPS_APPROVERS(p_langu : :p_langu) as steps_approvers
     values.counter as values_counter,
     values.field as values_field,
     values.value as values_value,
+    // Este campo string provoca dumps al usar distinct
+    //values.value_extended as values_value_extended,
     
     // Steps
     steps.wf_id as steps_wf_id,

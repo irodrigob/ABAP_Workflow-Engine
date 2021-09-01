@@ -628,14 +628,20 @@ CLASS ZCL_WFE_MODEL_DATA_CRUD IMPLEMENTATION.
                           chngind = zif_wfe_data=>cs_model_data-changelog-update_ind_pos-update
                           counter = <ls_xpositions>-counter
                           value_new = <ls_xpositions>-value
-                          value_old = <ls_ypositions>-value ) INTO TABLE mt_changelog_data.
+                          value_old = <ls_ypositions>-value
+                          value_extended_new = <ls_xpositions>-value_extended
+                          " No se guarda ya que se va usar para guardar archivos. Y no interesa.
+                          "value_extended_old = <ls_ypositions>-value_extended
+                           ) INTO TABLE mt_changelog_data.
           ENDIF.
         ELSE. " El campo no existe en el valor anterior
           INSERT VALUE #( source = zif_wfe_data=>cs_model_data-changelog-source-values
                           field  = <ls_xpositions>-field
                           counter = <ls_xpositions>-counter
                           chngind = zif_wfe_data=>cs_model_data-changelog-update_ind_pos-insert
-                          value_new = <ls_xpositions>-value ) INTO TABLE mt_changelog_data.
+                          value_new = <ls_xpositions>-value
+                          " value_extended_new = <ls_xpositions>-value_extended
+                          ) INTO TABLE mt_changelog_data.
         ENDIF.
 
       ENDLOOP.
@@ -649,7 +655,9 @@ CLASS ZCL_WFE_MODEL_DATA_CRUD IMPLEMENTATION.
                          chngind = zif_wfe_data=>cs_model_data-changelog-update_ind_pos-delete
                          counter = <ls_ypositions>-counter
                          field  = <ls_ypositions>-field
-                         value_old = <ls_ypositions>-value ) INTO TABLE mt_changelog_data.
+                         value_old = <ls_ypositions>-value
+                         " value_extended_old = <ls_ypositions>-value_extended
+                         ) INTO TABLE mt_changelog_data.
         ENDIF.
       ENDLOOP.
 
