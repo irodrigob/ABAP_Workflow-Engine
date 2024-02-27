@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZWFE_DDL_WF_DATA</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>WFE - CDS for workflow data</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

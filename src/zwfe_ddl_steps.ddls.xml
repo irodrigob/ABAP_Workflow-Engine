@@ -4,8 +4,6 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZWFE_DDL_STEPS</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>WFE - CDS for steps</DDTEXT>
    </DDLS>
   </asx:values>
  </asx:abap>

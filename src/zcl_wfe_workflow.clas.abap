@@ -6,10 +6,9 @@ CLASS zcl_wfe_workflow DEFINITION
 
     INTERFACES zif_wfe_workflow .
 
-    .
-
-
     "! <p class="shorttext synchronized">CONSTRUCTOR</p>
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    "! @parameter iv_langu | <p class="shorttext synchronized">Language</p>
     METHODS constructor
       IMPORTING
         !iv_workflow TYPE zwfe_e_workflow
@@ -17,6 +16,9 @@ CLASS zcl_wfe_workflow DEFINITION
       RAISING
         zcx_wfe .
     "! <p class="shorttext synchronized">Get instance by workflow name</p>
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    "! @parameter iv_langu | <p class="shorttext synchronized">Language</p>
+    "! @parameter ro_workflow | <p class="shorttext synchronized">Workflow instance</p>
     CLASS-METHODS get_instance_by_wf_name
       IMPORTING
         !iv_langu          TYPE sylangu DEFAULT sy-langu
@@ -26,6 +28,9 @@ CLASS zcl_wfe_workflow DEFINITION
       RAISING
         zcx_wfe .
     "! <p class="shorttext synchronized">Get instance by workflow ID</p>
+    "! @parameter iv_wf_id | <p class="shorttext synchronized">Workflow id</p>
+    "! @parameter iv_langu | <p class="shorttext synchronized">Language</p>
+    "! @parameter ro_workflow | <p class="shorttext synchronized">Workflow instance</p>
     CLASS-METHODS get_instance_by_wf_id
       IMPORTING
         !iv_langu          TYPE sylangu DEFAULT sy-langu
@@ -34,50 +39,50 @@ CLASS zcl_wfe_workflow DEFINITION
         VALUE(ro_workflow) TYPE REF TO zif_wfe_workflow
       RAISING
         zcx_wfe .
-protected section.
+  PROTECTED SECTION.
 
-  types:
-    BEGIN OF ts_result_new,
+    TYPES:
+      BEGIN OF ts_result_new,
         wf_id  TYPE zwfe_e_wf_id,
         status TYPE zwfe_e_status,
       END OF ts_result_new .
-  types:
-    BEGIN OF ts_approvers,
+    TYPES:
+      BEGIN OF ts_approvers,
         approver TYPE zwfe_e_approver,
       END OF ts_approvers .
-  types:
-    tt_approvers TYPE STANDARD TABLE OF ts_approvers .
-  types:
-    tv_actvt TYPE c LENGTH 2 .
-  types:
-    BEGIN OF ts_wf_info,
+    TYPES:
+      tt_approvers TYPE STANDARD TABLE OF ts_approvers .
+    TYPES:
+      tv_actvt TYPE c LENGTH 2 .
+    TYPES:
+      BEGIN OF ts_wf_info,
         workflow          TYPE zwfe_t001-workflow,
         description       TYPE zwfe_t001t-description,
         description_short TYPE zwfe_t001t-description_short,
       END OF ts_wf_info .
-  types:
-    BEGIN OF ts_owner,
+    TYPES:
+      BEGIN OF ts_owner,
         owner      TYPE zwfe_t005-owner,
         owner_desc TYPE zwfe_t005t-description,
       END OF ts_owner .
-  types:
-    tt_owner TYPE STANDARD TABLE OF ts_owner WITH EMPTY KEY .
-  types:
-    BEGIN OF ts_owner_approvers,
+    TYPES:
+      tt_owner TYPE STANDARD TABLE OF ts_owner WITH EMPTY KEY .
+    TYPES:
+      BEGIN OF ts_owner_approvers,
         owner    TYPE zwfe_t005-owner,
         approver TYPE zwfe_t006-approver,
       END OF ts_owner_approvers .
-  types:
-    tt_owner_approvers TYPE STANDARD TABLE OF ts_owner_approvers WITH EMPTY KEY .
-  types:
-    BEGIN OF ts_status_flow,
+    TYPES:
+      tt_owner_approvers TYPE STANDARD TABLE OF ts_owner_approvers WITH EMPTY KEY .
+    TYPES:
+      BEGIN OF ts_status_flow,
         status      TYPE zwfe_e_status,
         status_next TYPE zwfe_e_status_next,
       END OF ts_status_flow .
-  types:
-    tt_status_flow TYPE STANDARD TABLE OF ts_status_flow WITH EMPTY KEY .
-  types:
-    BEGIN OF ts_wf_status,
+    TYPES:
+      tt_status_flow TYPE STANDARD TABLE OF ts_status_flow WITH EMPTY KEY .
+    TYPES:
+      BEGIN OF ts_wf_status,
         status      TYPE zwfe_t003-status,
         status_desc TYPE zwfe_t002t-description,
         owner       TYPE zwfe_t003-owner,
@@ -86,125 +91,170 @@ protected section.
         reject      TYPE zwfe_t003-reject,
         complete    TYPE zwfe_t003-complete,
       END OF ts_wf_status .
-  types:
-    tt_wf_status TYPE STANDARD TABLE OF ts_wf_status WITH EMPTY KEY .
+    TYPES:
+      tt_wf_status TYPE STANDARD TABLE OF ts_wf_status WITH EMPTY KEY .
 
-  constants:
-    BEGIN OF cs_actvt,
+    CONSTANTS:
+      BEGIN OF cs_actvt,
         new         TYPE tv_actvt VALUE 'N',
         draft       TYPE tv_actvt VALUE 'D',
         edit        TYPE tv_actvt VALUE 'E',
         approve     TYPE tv_actvt VALUE 'A',
         edit_values TYPE tv_actvt VALUE 'V',
       END OF cs_actvt .
-  data MO_HANDLE_BADI type ref to ZWFE_BADI_WF_MODEL .
-  data MV_LANGU type SYLANGU .
-  data MV_WORKFLOW type ZWFE_E_WORKFLOW .
-  data MS_WF_INFO type TS_WF_INFO .
-  data MT_WF_STATUS type TT_WF_STATUS .
-  data MT_STATUS_FLOW type TT_STATUS_FLOW .
-  data MV_STATUS_INIT type ZWFE_T002-STATUS .
-  data MV_STATUS_DRAFT type ZWFE_T002-STATUS .
-  data MT_OWNER type TT_OWNER .
-  data MT_OWNER_APPROVERS type TT_OWNER_APPROVERS .
-  data MO_QUERY type ref to ZCL_WFE_MODEL_DATA_QUERY .
-  data MO_CRUD type ref to ZCL_WFE_MODEL_DATA_CRUD .
-  data MS_HEADER type ZWFE_S_HEADER_ALL_FIELDS .
-  data MT_STEPS type ZWFE_I_STEPS_ALL_FIELDS .
-  data MT_STEPS_APPROVERS type ZWFE_I_STEPS_APPROV_ALL_FIELDS .
-  data MT_VALUES type ZWFE_I_VALUES_ALL_FIELDS .
-  data MV_ACTVT type TV_ACTVT .
-  data MV_PROCESS_USER type ZWFE_E_PROCESS_USER .
-  data:
-    mt_status_reject TYPE STANDARD TABLE OF zwfe_t002-status .
-  data:
-    mt_status_completed TYPE STANDARD TABLE OF zwfe_t002-status .
+    DATA mo_handle_badi TYPE REF TO zwfe_badi_wf_model .
+    DATA mv_langu TYPE sylangu .
+    DATA mv_workflow TYPE zwfe_e_workflow .
+    DATA ms_wf_info TYPE ts_wf_info .
+    DATA mt_wf_status TYPE tt_wf_status .
+    DATA mt_status_flow TYPE tt_status_flow .
+    DATA mv_status_init TYPE zwfe_t002-status .
+    DATA mv_status_draft TYPE zwfe_t002-status .
+    DATA mt_owner TYPE tt_owner .
+    DATA mt_owner_approvers TYPE tt_owner_approvers .
+    DATA mo_query TYPE REF TO zcl_wfe_model_data_query .
+    DATA mo_crud TYPE REF TO zcl_wfe_model_data_crud .
+    DATA ms_header TYPE zwfe_s_header_all_fields .
+    DATA mt_steps TYPE zwfe_i_steps_all_fields .
+    DATA mt_steps_approvers TYPE zwfe_i_steps_approv_all_fields .
+    DATA mt_values TYPE zwfe_i_values_all_fields .
+    DATA mv_actvt TYPE tv_actvt .
+    DATA mv_process_user TYPE zwfe_e_process_user .
+    DATA:
+      mt_status_reject TYPE STANDARD TABLE OF zwfe_t002-status .
+    DATA:
+      mt_status_completed TYPE STANDARD TABLE OF zwfe_t002-status .
 
-  methods LOAD_WORKFLOW_CONFIGURATION
-    raising
-      ZCX_WFE .
-  methods CHECK_CONSISTENCY_STATUS_CONF
-    raising
-      ZCX_WFE .
-  methods CHECK_CONSISTENCY_OWNER_CONF
-    raising
-      ZCX_WFE .
-  methods READ_WF_ID_DATA
-    importing
-      !IV_WF_ID type ZWFE_E_WF_ID
-    raising
-      ZCX_WFE .
-  methods FILL_HEADER_ON_CREATION
-    raising
-      ZCX_WFE .
-  methods FILL_VALUES
-    importing
-      !IT_VALUES type ZWFE_I_VALUES_WF .
-  methods NEW_STEP
-    importing
-      !IV_STATUS type ZWFE_E_STATUS
-      !IV_STEP_STATUS type ZWFE_E_STEP_STATUS default ZIF_WFE_DATA=>CS_WF_PROCESS-STEP_STATUS-ACTIVE .
-  methods FILL_STEP_APPROVERS
-    importing
-      !IV_STATUS type ZWFE_S_HEADER_ALL_FIELDS-STATUS
-      !IT_APPROVERS type ZIF_WFE_WORKFLOW=>TT_APPROVERS
-    raising
-      ZCX_WFE .
-  methods CHECK_CONSISTENCY
-    exporting
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
-  methods VALIDATE_STEPS_APPROVERS
-    changing
-      !CT_RETURN type ZIF_WFE_DATA=>TT_RETURN .
-  methods SAVE_DATA
-    importing
-      !IV_COMMIT type SAP_BOOL
-    exporting
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
-  methods DETERMINE_NEXT_STATUS
-    importing
-      !IV_STATUS type ZWFE_E_STATUS
-      !IV_STEP_RESULT type ZWFE_E_STEP_RESULT
-    exporting
-      !EV_NEXT_STATUS type ZWFE_E_STATUS
-      !EV_WORKFLOW_COMPLETED type SAP_BOOL
-    raising
-      ZCX_WFE .
-  methods CHECK_DATA_NEXT_STEP
-    raising
-      ZCX_WFE .
-  methods APPROVE_STEP
-    importing
-      !IV_NEXT_STATUS type ZWFE_E_STATUS_NEXT
-      !IV_WORKFLOW_COMPLETED type SAP_BOOL default ABAP_FALSE
-    raising
-      ZCX_WFE .
-  methods REJECT_STEP
-    importing
-      !IV_NEXT_STATUS type ZWFE_E_STATUS_NEXT .
-  methods INSTANCE_BADI .
-  methods CALL_BADI_CHANGE_STEPS_APPROV
-    importing
-      !IV_STATUS type ZWFE_E_STATUS
-      !IT_VALUES type ZWFE_I_VALUES_WF
-    changing
-      !CT_APPROVERS type ZIF_WFE_WORKFLOW=>TT_APPROVERS .
-  methods CALL_BADI_POST_SAVE_WORKFLOW .
-  methods CALL_BADI_DET_NEXT_STATUS
-    importing
-      !IV_ACTUAL_STATUS type ZWFE_E_STATUS
-      !IV_STEP_RESULT type ZWFE_E_STEP_RESULT
-    changing
-      !CV_NEXT_STATUS type ZWFE_E_STATUS_NEXT
-      !CV_WORKFLOW_COMPLETED type SAP_BOOL
-    raising
-      ZCX_WFE .
+    "! <p class="shorttext synchronized">Load workflow configuration</p>
+    METHODS load_workflow_configuration
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Check consistency of status configuration</p>
+    METHODS check_consistency_status_conf
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Check consistency of owner configuration</p>
+    METHODS check_consistency_owner_conf
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Read id workflow data</p>
+    "! @parameter iv_wf_id | <p class="shorttext synchronized">Workflow id</p>
+    METHODS read_wf_id_data
+      IMPORTING
+        !iv_wf_id TYPE zwfe_e_wf_id
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Fill header on creation</p>
+    METHODS fill_header_on_creation
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Fill values</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    METHODS fill_values
+      IMPORTING
+        !it_values TYPE zwfe_i_values_wf .
+    "! <p class="shorttext synchronized">New step</p>
+    "! @parameter iv_status | <p class="shorttext synchronized">Status</p>
+    "! @parameter iv_step_status | <p class="shorttext synchronized">Step status</p>
+    METHODS new_step
+      IMPORTING
+        !iv_status      TYPE zwfe_e_status
+        !iv_step_status TYPE zwfe_e_step_status DEFAULT zif_wfe_data=>cs_wf_process-step_status-active .
+    "! <p class="shorttext synchronized">Fill step approvers</p>
+    "! @parameter iv_status | <p class="shorttext synchronized">Status</p>
+    "! @parameter it_approvers | <p class="shorttext synchronized">Approvers</p>
+    METHODS fill_step_approvers
+      IMPORTING
+        !iv_status    TYPE zwfe_s_header_all_fields-status
+        !it_approvers TYPE zif_wfe_workflow=>tt_approvers
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Check consistency of workflow configuration</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Return of check</p>
+    METHODS check_consistency
+      EXPORTING
+        !et_return TYPE zif_wfe_data=>tt_return .
+    "! <p class="shorttext synchronized">Validate steps approvers</p>
+    "! @parameter ct_return | <p class="shorttext synchronized">Return of validation</p>
+    METHODS validate_steps_approvers
+      CHANGING
+        !ct_return TYPE zif_wfe_data=>tt_return .
+    "! <p class="shorttext synchronized">Save data</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Return of process</p>
+    METHODS save_data
+      IMPORTING
+        !iv_commit TYPE sap_bool
+      EXPORTING
+        !et_return TYPE zif_wfe_data=>tt_return .
+    "! <p class="shorttext synchronized">Determine next status</p>
+    "! @parameter iv_status | <p class="shorttext synchronized">Status</p>
+    "! @parameter iv_step_result | <p class="shorttext synchronized">Step result</p>
+    "! @parameter ev_next_status | <p class="shorttext synchronized">Next status</p>
+    "! @parameter ev_workflow_completed | <p class="shorttext synchronized">Workflow completed</p>
+    METHODS determine_next_status
+      IMPORTING
+        !iv_status             TYPE zwfe_e_status
+        !iv_step_result        TYPE zwfe_e_step_result
+      EXPORTING
+        !ev_next_status        TYPE zwfe_e_status
+        !ev_workflow_completed TYPE sap_bool
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Check data of next step</p>
+    METHODS check_data_next_step
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Approve step</p>
+    "! @parameter iv_next_status | <p class="shorttext synchronized">Next status</p>
+    "! @parameter iv_workflow_completed | <p class="shorttext synchronized">workflow completed</p>
+    METHODS approve_step
+      IMPORTING
+        !iv_next_status        TYPE zwfe_e_status_next
+        !iv_workflow_completed TYPE sap_bool DEFAULT abap_false
+      RAISING
+        zcx_wfe .
+    "! <p class="shorttext synchronized">Reject step</p>
+    "! @parameter iv_next_status | <p class="shorttext synchronized">Next status</p>
+    METHODS reject_step
+      IMPORTING
+        !iv_next_status TYPE zwfe_e_status_next .
+    "! <p class="shorttext synchronized">Instance badi</p>
+    METHODS instance_badi .
+    "! <p class="shorttext synchronized">Call badi method for change steps approvers</p>
+    "! @parameter iv_status | <p class="shorttext synchronized">Status</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    "! @parameter iv_step_owner | <p class="shorttext synchronized">Owner of step</p>
+    "! @parameter ct_approvers | <p class="shorttext synchronized">Approvers</p>
+    METHODS call_badi_change_steps_approv
+      IMPORTING
+        !iv_status     TYPE zwfe_e_status
+        !it_values     TYPE zwfe_i_values_wf
+        !iv_step_owner TYPE zwfe_e_owner
+      CHANGING
+        !ct_approvers  TYPE zif_wfe_workflow=>tt_approvers .
+    "! <p class="shorttext synchronized">Call badi method for determine next status</p>
+    METHODS call_badi_post_save_workflow .
+    "! <p class="shorttext synchronized">Call badi method for change steps approvers</p>
+    "! @parameter iv_actual_status | <p class="shorttext synchronized">Actual status</p>
+    "! @parameter iv_step_result | <p class="shorttext synchronized">Step result</p>
+    "! @parameter cv_next_status | <p class="shorttext synchronized">Next status</p>
+    "! @parameter cv_workflow_completed | <p class="shorttext synchronized">Workflow completed</p>
+    METHODS call_badi_det_next_status
+      IMPORTING
+        !iv_actual_status      TYPE zwfe_e_status
+        !iv_step_result        TYPE zwfe_e_step_result
+      CHANGING
+        !cv_next_status        TYPE zwfe_e_status_next
+        !cv_workflow_completed TYPE sap_bool
+      RAISING
+        zcx_wfe .
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
+CLASS zcl_wfe_workflow IMPLEMENTATION.
 
 
   METHOD approve_step.
@@ -258,10 +308,11 @@ CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
     IF mo_handle_badi IS BOUND.
       CALL BADI mo_handle_badi->change_step_approvers
         EXPORTING
-          iv_status    = iv_status
-          it_values    = it_values
+          iv_status     = iv_status
+          it_values     = it_values
+          iv_step_owner = iv_step_owner
         CHANGING
-          ct_approvers = ct_approvers.
+          ct_approvers  = ct_approvers.
 
     ENDIF.
   ENDMETHOD.
@@ -283,7 +334,7 @@ CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
                             init = <ls_wf_status>-init ) INTO TABLE lt_status.
             " Y en caso de rechazar el siguiente paso no puede ser de aprobación
           ELSEIF <ls_wf_status>-reject = abap_true AND iv_step_result = zif_wfe_data=>cs_wf_process-step_result-reject.
-            INSERT VALUE #( status = <ls_status_flow>-status
+            INSERT VALUE #( status = <ls_status_flow>-status_next
                             reject = <ls_wf_status>-reject ) INTO TABLE lt_status.
           ENDIF.
         ENDIF.
@@ -498,7 +549,8 @@ CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
 
   METHOD fill_step_approvers.
 
-    " Borro los aprobadores que pueda tener el paso para añadir los que me vienen como parámetro de salida
+    " Se borran los aprobadores determminados (son los aprobadores fijos que se configuran a nivel del propietario del paso ) para el
+    " status en el cual esta el worflow y se informan aquellos pasados por parámetro.
     DELETE mt_steps_approvers WHERE status = iv_status.
 
     mt_steps_approvers = VALUE #( BASE mt_steps_approvers FOR <wa> IN it_approvers WHERE ( approver IS NOT INITIAL ) ( wf_id = ms_header-wf_id
@@ -923,6 +975,7 @@ CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
       " Se llama al método de la BADI que puede cambiar los aprobadores del paso
       call_badi_change_steps_approv( EXPORTING iv_status    = iv_status
                                                it_values    = it_values
+                                               iv_step_owner    = <ls_wf_status>-owner
                                      CHANGING ct_approvers = et_approvers ).
 
     ELSE.
@@ -1008,8 +1061,10 @@ CLASS ZCL_WFE_WORKFLOW IMPLEMENTATION.
                                         it_values = it_values
                               IMPORTING et_approvers = et_approvers ).
 
-        " Relleno de los aprobadores del paso. Los aprobadores del paso se determinan en el motor. Ya que intervienen
-        " exit que permiten modificar o determinar aprobadores según el estado.
+        " Se pasan los aprobadores determinados en el paso anterior a la variable global que se usará para guardar los datos.
+        " Este método se podría incluido dentro del "zif_wfe_workflow~determine_status_approvers" pero prefiero dejarlo aparte,
+        " el motivo es que donde se determina los aprobadores puede ser sobreescrito en alguna clase padre. Aunque a día de hoy, 13/12/2021,
+        " esa posibilidad no existe, pero nunca se sabe como se evolucionará el motor.
         fill_step_approvers( EXPORTING iv_status = ms_header-status
                                        it_approvers = et_approvers  ).
 

@@ -21,6 +21,12 @@
     <TCODE>ZWFE_WORKFLOW</TCODE>
     <PARAM>/*SM34 VCLDIR-VCLNAME=ZWFE_WORKFLOW;UPDATE=X;</PARAM>
    </TSTCP>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>S</SPRSL>
+     <TTEXT>WFE - Workflow maintenance</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
   </asx:values>
  </asx:abap>
 </abapGit>

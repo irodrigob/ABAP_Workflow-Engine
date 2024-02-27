@@ -1,7 +1,5 @@
 *---------------------------------------------------------------------*
 *    view related data declarations
-*   generation date: 09.07.2021 at 09:51:30
-*   view maintenance generator version: #001407#
 *---------------------------------------------------------------------*
 *...processing: ZWFE_T001.......................................*
 DATA:  BEGIN OF STATUS_ZWFE_T001                     .   "state vector

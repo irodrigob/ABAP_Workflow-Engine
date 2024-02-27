@@ -1,80 +1,114 @@
-class ZCL_WFE_WORKFLOW_ENGINE definition
-  public
-  create public .
+CLASS zcl_wfe_workflow_engine DEFINITION
+  PUBLIC
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
     "! <p class="shorttext synchronized">CONSTRUCTOR</p>
-  methods CONSTRUCTOR
-    importing
-      !IV_LANGU type SYLANGU default SY-LANGU .
+    "! @parameter iv_langu | <p class="shorttext synchronized">Language</p>
+    METHODS constructor
+      IMPORTING
+        !iv_langu TYPE sylangu DEFAULT sy-langu .
     "! <p class="shorttext synchronized">New workflow or draft</p>
-  methods NEW_WORKFLOW
-    importing
-      !IV_WORKFLOW type ZWFE_E_WORKFLOW
-      !IT_VALUES type ZWFE_I_VALUES_WF
-      !IV_DRAFT type SAP_BOOL default ABAP_FALSE
-      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
-      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
-    exporting
-      !EV_WF_ID type ZWFE_E_WF_ID
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    "! @parameter iv_draft | <p class="shorttext synchronized">Is draft</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter iv_process_user | <p class="shorttext synchronized">User process</p>
+    "! @parameter ev_wf_id | <p class="shorttext synchronized">ID workflow</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Return process</p>
+    METHODS new_workflow
+      IMPORTING
+        !iv_workflow     TYPE zwfe_e_workflow
+        !it_values       TYPE zwfe_i_values_wf
+        !iv_draft        TYPE sap_bool DEFAULT abap_false
+        !iv_commit       TYPE sap_bool DEFAULT abap_true
+        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
+      EXPORTING
+        !ev_wf_id        TYPE zwfe_e_wf_id
+        !et_return       TYPE zif_wfe_data=>tt_return .
     "! <p class="shorttext synchronized">Continue workflow step</p>
-  methods CONTINUE_WORKFLOW_STEP
-    importing
-      !IV_WF_ID type ZWFE_E_WF_ID
-      !IV_STEP_RESULT type ZWFE_E_STEP_RESULT
-      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
-      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
-    exporting
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN
-      !EV_WF_COMPLETED type SAP_BOOL .
+    "! @parameter iv_wf_id | <p class="shorttext synchronized">ID Workflow</p>
+    "! @parameter iv_step_result | <p class="shorttext synchronized">Step result</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter iv_process_user | <p class="shorttext synchronized">user process</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Process return</p>
+    "! @parameter ev_wf_completed | <p class="shorttext synchronized">Workflow completed</p>
+    "! @parameter ev_next_status | <p class="shorttext synchronized">Siguiente status</p>
+    METHODS continue_workflow_step
+      IMPORTING
+        !iv_wf_id        TYPE zwfe_e_wf_id
+        !iv_step_result  TYPE zwfe_e_step_result
+        !iv_commit       TYPE sap_bool DEFAULT abap_true
+        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
+      EXPORTING
+        !et_return       TYPE zif_wfe_data=>tt_return
+        !ev_wf_completed TYPE sap_bool
+        !ev_next_status  TYPE zwfe_e_status   .
     "! <p class="shorttext synchronized">Update values</p>
-  methods UPDATE_VALUES
-    importing
-      !IV_WF_ID type ZWFE_E_WF_ID
-      !IT_VALUES type ZWFE_I_VALUES_WF
-      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
-      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
-    exporting
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
-protected section.
+    "! @parameter iv_wf_id | <p class="shorttext synchronized">ID Workflow</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter iv_process_user | <p class="shorttext synchronized">Process user</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Process return</p>
+    METHODS update_values
+      IMPORTING
+        !iv_wf_id        TYPE zwfe_e_wf_id
+        !it_values       TYPE zwfe_i_values_wf
+        !iv_commit       TYPE sap_bool DEFAULT abap_true
+        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
+      EXPORTING
+        !et_return       TYPE zif_wfe_data=>tt_return .
+  PROTECTED SECTION.
 
-  data MO_HANDLE_BADI type ref to ZWFE_BADI_ENGINE .
-  data MV_LANGU type SY-LANGU .
-  data MO_WORKFLOW type ref to ZIF_WFE_WORKFLOW .
+    DATA mo_handle_badi TYPE REF TO zwfe_badi_engine .
+    DATA mv_langu TYPE sy-langu .
+    DATA mo_workflow TYPE REF TO zif_wfe_workflow .
 
     "! <p class="shorttext synchronized">New workflow</p>
-  methods CREATE_WORKFLOW
-    importing
-      !IV_WORKFLOW type ZWFE_E_WORKFLOW
-      !IT_VALUES type ZWFE_I_VALUES_WF
-      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
-      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
-    exporting
-      !EV_WF_ID type ZWFE_E_WF_ID
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter iv_process_user | <p class="shorttext synchronized">User process</p>
+    "! @parameter ev_wf_id | <p class="shorttext synchronized">ID workflow</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Return process</p>
+    METHODS create_workflow
+      IMPORTING
+        !iv_workflow     TYPE zwfe_e_workflow
+        !it_values       TYPE zwfe_i_values_wf
+        !iv_commit       TYPE sap_bool DEFAULT abap_true
+        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
+      EXPORTING
+        !ev_wf_id        TYPE zwfe_e_wf_id
+        !et_return       TYPE zif_wfe_data=>tt_return .
     "! <p class="shorttext synchronized">Create a draft workflow</p>
-  methods CREATE_DRAFT_WORKFLOW
-    importing
-      !IV_WORKFLOW type ZWFE_E_WORKFLOW
-      !IT_VALUES type ZWFE_I_VALUES_WF
-      !IV_COMMIT type SAP_BOOL default ABAP_TRUE
-      !IV_PROCESS_USER type ZWFE_E_PROCESS_USER optional
-    exporting
-      !EV_WF_ID type ZWFE_E_WF_ID
-      !ET_RETURN type ZIF_WFE_DATA=>TT_RETURN .
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    "! @parameter it_values | <p class="shorttext synchronized">Values</p>
+    "! @parameter iv_commit | <p class="shorttext synchronized">Do commit</p>
+    "! @parameter iv_process_user | <p class="shorttext synchronized">User process</p>
+    "! @parameter ev_wf_id | <p class="shorttext synchronized">ID workflow</p>
+    "! @parameter et_return | <p class="shorttext synchronized">Return process</p>
+    METHODS create_draft_workflow
+      IMPORTING
+        !iv_workflow     TYPE zwfe_e_workflow
+        !it_values       TYPE zwfe_i_values_wf
+        !iv_commit       TYPE sap_bool DEFAULT abap_true
+        !iv_process_user TYPE zwfe_e_process_user OPTIONAL
+      EXPORTING
+        !ev_wf_id        TYPE zwfe_e_wf_id
+        !et_return       TYPE zif_wfe_data=>tt_return .
     "! <p class="shorttext synchronized">Instance BADI</p>
-  methods INSTANCE_BADI
-    importing
-      !IV_WORKFLOW type ZWFE_E_WORKFLOW .
+    "! @parameter iv_workflow | <p class="shorttext synchronized">Workflow</p>
+    METHODS instance_badi
+      IMPORTING
+        !iv_workflow TYPE zwfe_e_workflow .
   PRIVATE SECTION.
 
 ENDCLASS.
 
 
 
-CLASS ZCL_WFE_WORKFLOW_ENGINE IMPLEMENTATION.
+CLASS zcl_wfe_workflow_engine IMPLEMENTATION.
 
 
   METHOD constructor.
@@ -103,7 +137,7 @@ CLASS ZCL_WFE_WORKFLOW_ENGINE IMPLEMENTATION.
               iv_commit = iv_commit
             IMPORTING
               et_return      = DATA(lt_return)
-              ev_next_status = DATA(lv_next_status)
+              ev_next_status = ev_next_status
               ev_wf_completed = ev_wf_completed
               et_approvers = DATA(lt_approvers) ).
 

@@ -15,13 +15,13 @@
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CONTINUE_NEXT_STEP</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Continue next step(approve o reject step)</DESCRIPT>
+     <DESCRIPT>Approve or reject the step</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>DETERMINE_STATUS_APPROVERS</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Determine status approvers</DESCRIPT>
+     <DESCRIPT>Determine approvers of a status</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
@@ -33,13 +33,13 @@
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>GET_APPROVERS_STEP_ACTIVE</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Get approver of step active</DESCRIPT>
+     <DESCRIPT>Get approvers of the active step</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>GET_DATA</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Get data of worklfow(header, values, etc.)</DESCRIPT>
+     <DESCRIPT>Get data of model</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
@@ -57,7 +57,7 @@
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>IS_DRAFT</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Is status o status worfkow draft?</DESCRIPT>
+     <DESCRIPT>Is status or active status draft?</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
@@ -75,7 +75,7 @@
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>NEW_DRAFT</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>New draft</DESCRIPT>
+     <DESCRIPT>New draft workflow</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZIF_WFE_WORKFLOW</CLSNAME>

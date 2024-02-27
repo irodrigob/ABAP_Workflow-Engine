@@ -3,7 +3,6 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <TOOL>BADI_DEF</TOOL>
-   <SHORTTEXT>WFE - BADI for workflow engine</SHORTTEXT>
    <BADI_DATA>
     <ENH_BADI_DATA>
      <BADI_NAME>ZWFE_BADI_ENGINE</BADI_NAME>

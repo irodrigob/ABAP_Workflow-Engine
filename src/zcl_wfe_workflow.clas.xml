@@ -22,43 +22,43 @@
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CALL_BADI_CHANGE_STEPS_APPROV</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Call badi method of change approvers of steps</DESCRIPT>
+     <DESCRIPT>Call badi method for change steps approvers</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CALL_BADI_DET_NEXT_STATUS</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Call badi method for determine next status</DESCRIPT>
+     <DESCRIPT>Call badi method for change steps approvers</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CALL_BADI_POST_SAVE_WORKFLOW</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Call badi method after save the data</DESCRIPT>
+     <DESCRIPT>Call badi method for determine next status</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CHECK_CONSISTENCY</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Check consistency of workflow</DESCRIPT>
+     <DESCRIPT>Check consistency of workflow configuration</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CHECK_CONSISTENCY_OWNER_CONF</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Verification of the integrity of the owner configuration</DESCRIPT>
+     <DESCRIPT>Check consistency of owner configuration</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CHECK_CONSISTENCY_STATUS_CONF</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Verification of the integrity of the state configuration</DESCRIPT>
+     <DESCRIPT>Check consistency of status configuration</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>CHECK_DATA_NEXT_STEP</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Check if the workflow can be approved or rejected</DESCRIPT>
+     <DESCRIPT>Check data of next step</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
@@ -76,37 +76,37 @@
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>FILL_HEADER_ON_CREATION</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Fill header data on the creation</DESCRIPT>
+     <DESCRIPT>Fill header on creation</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>FILL_STEP_APPROVERS</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Fill approver of step</DESCRIPT>
+     <DESCRIPT>Fill step approvers</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>FILL_VALUES</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Fill values of workflow</DESCRIPT>
+     <DESCRIPT>Fill values</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>GET_INSTANCE_BY_WF_ID</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Get workflow instance by workflow id</DESCRIPT>
+     <DESCRIPT>Get instance by workflow ID</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>GET_INSTANCE_BY_WF_NAME</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Get workflow instance by workflow name</DESCRIPT>
+     <DESCRIPT>Get instance by workflow name</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>INSTANCE_BADI</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Instance the badi</DESCRIPT>
+     <DESCRIPT>Instance badi</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
@@ -244,7 +244,7 @@
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>READ_WF_ID_DATA</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Read workflow by workflow id</DESCRIPT>
+     <DESCRIPT>Read id workflow data</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
@@ -256,13 +256,13 @@
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>SAVE_DATA</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Save data in the model</DESCRIPT>
+     <DESCRIPT>Save data</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CLSNAME>ZCL_WFE_WORKFLOW</CLSNAME>
      <CMPNAME>VALIDATE_STEPS_APPROVERS</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Validate approvers of steps</DESCRIPT>
+     <DESCRIPT>Validate steps approvers</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
   </asx:values>

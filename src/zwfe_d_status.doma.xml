@@ -11,6 +11,15 @@
     <ENTITYTAB>ZWFE_T002</ENTITYTAB>
     <DDTEXT>WFE - Status</DDTEXT>
    </DD01V>
+   <I18N_LANGS>
+    <LANGU>S</LANGU>
+   </I18N_LANGS>
+   <DD01_TEXTS>
+    <item>
+     <DDLANGUAGE>S</DDLANGUAGE>
+     <DDTEXT>WFE - Estado</DDTEXT>
+    </item>
+   </DD01_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>

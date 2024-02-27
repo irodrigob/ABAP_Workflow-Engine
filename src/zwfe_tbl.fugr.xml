@@ -6,8 +6,8 @@
    <INCLUDES>
     <SOBJ_NAME>LZWFE_TBLF00</SOBJ_NAME>
     <SOBJ_NAME>LZWFE_TBLI00</SOBJ_NAME>
-    <SOBJ_NAME>LZWFE_TBLTOP</SOBJ_NAME>
     <SOBJ_NAME>LZWFE_TBLT00</SOBJ_NAME>
+    <SOBJ_NAME>LZWFE_TBLTOP</SOBJ_NAME>
     <SOBJ_NAME>SAPLZWFE_TBL</SOBJ_NAME>
    </INCLUDES>
    <FUNCTIONS>
@@ -1189,7 +1189,6 @@
        <CONT_NAME>TCTRL_ZWFE_T002</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T002-STATUS</NAME>
-       <TEXT>Status__________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1206,7 +1205,6 @@
        <CONT_NAME>TCTRL_ZWFE_T002</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T002T-DESCRIPTION</NAME>
-       <TEXT>Status_Description______________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1399,7 +1397,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>ZWFE_V001-WORKFLOW</NAME>
-       <TEXT>Workflow____________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>020</LENGTH>
@@ -1496,7 +1493,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-STATUS</NAME>
-       <TEXT>Status__________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1513,7 +1509,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-DESC_STATUS</NAME>
-       <TEXT>Status_Description______________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1530,7 +1525,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-DESC_OWNER</NAME>
-       <TEXT>Description_____________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1547,7 +1541,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-OWNER</NAME>
-       <TEXT>Owner___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1564,7 +1557,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-INIT</NAME>
-       <TEXT>Initial_________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>005</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1581,7 +1573,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-DRAFT</NAME>
-       <TEXT>Draft___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>006</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1598,7 +1589,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-REJECT</NAME>
-       <TEXT>Rejected________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>007</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1615,7 +1605,6 @@
        <CONT_NAME>TCTRL_ZWFE_V001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V001-COMPLETE</NAME>
-       <TEXT>Completed_______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>008</COLUMN>
        <LENGTH>040</LENGTH>
@@ -1994,7 +1983,6 @@
        <CONT_NAME>TCTRL_ZWFE_T001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T001-WORKFLOW</NAME>
-       <TEXT>Workflow________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2011,7 +1999,6 @@
        <CONT_NAME>TCTRL_ZWFE_T001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T001T-DESCRIPTION</NAME>
-       <TEXT>WF_Description__________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2028,7 +2015,6 @@
        <CONT_NAME>TCTRL_ZWFE_T001</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T001T-DESCRIPTION_SHORT</NAME>
-       <TEXT>WF_Description_Short____________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2242,7 +2228,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>ZWFE_V002-WORKFLOW</NAME>
-       <TEXT>Workflow____________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>020</LENGTH>
@@ -2277,7 +2262,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>ZWFE_V002-STATUS</NAME>
-       <TEXT>Status______________</TEXT>
        <LINE>002</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>020</LENGTH>
@@ -2374,7 +2358,6 @@
        <CONT_NAME>TCTRL_ZWFE_V002</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V002-STATUS_NEXT</NAME>
-       <TEXT>Next_Stat.______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2391,7 +2374,6 @@
        <CONT_NAME>TCTRL_ZWFE_V002</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V002-DESCRIPTION</NAME>
-       <TEXT>Status_Description______________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2645,7 +2627,6 @@
        <CONT_NAME>TCTRL_ZWFE_T005</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T005-OWNER</NAME>
-       <TEXT>Owner___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2662,7 +2643,6 @@
        <CONT_NAME>TCTRL_ZWFE_T005</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T005T-DESCRIPTION</NAME>
-       <TEXT>Description_____________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2855,7 +2835,6 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>ZWFE_V003-OWNER</NAME>
-       <TEXT>Owner_______________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>020</LENGTH>
@@ -2952,7 +2931,6 @@
        <CONT_NAME>TCTRL_ZWFE_V003</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V003-COUNTER</NAME>
-       <TEXT>Counter_________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -2969,7 +2947,6 @@
        <CONT_NAME>TCTRL_ZWFE_V003</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_V003-APPROVER</NAME>
-       <TEXT>Approver________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3218,7 +3195,6 @@
        <CONT_NAME>TCTRL_ZWFE_T013</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T013-BACKUP</NAME>
-       <TEXT>User_Backup_____________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3235,7 +3211,6 @@
        <CONT_NAME>TCTRL_ZWFE_T013</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T013-USERNAME</NAME>
-       <TEXT>User____________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3252,7 +3227,6 @@
        <CONT_NAME>TCTRL_ZWFE_T013</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T013-VALID_FROM</NAME>
-       <TEXT>Valid_From______________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3269,7 +3243,6 @@
        <CONT_NAME>TCTRL_ZWFE_T013</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T013-VALID_TO</NAME>
-       <TEXT>Valid_To________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>004</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3567,7 +3540,6 @@
        <CONT_NAME>TCTRL_ZWFE_T006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T006-OWNER</NAME>
-       <TEXT>Owner___________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3584,7 +3556,6 @@
        <CONT_NAME>TCTRL_ZWFE_T006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T006-COUNTER</NAME>
-       <TEXT>Counter_________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>002</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3601,7 +3572,6 @@
        <CONT_NAME>TCTRL_ZWFE_T006</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZWFE_T006-APPROVER</NAME>
-       <TEXT>Approver________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>

@@ -18,6 +18,19 @@
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
    </DD04V>
+   <I18N_LANGS>
+    <LANGU>S</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>S</DDLANGUAGE>
+     <DDTEXT>WFE - Estado del workflow</DDTEXT>
+     <REPTEXT>Estado WF</REPTEXT>
+     <SCRTEXT_S>EstadoWF</SCRTEXT_S>
+     <SCRTEXT_M>Estado WF</SCRTEXT_M>
+     <SCRTEXT_L>Estado WF</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
   </asx:values>
  </asx:abap>
 </abapGit>
